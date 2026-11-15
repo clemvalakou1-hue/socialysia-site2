@@ -1,0 +1,9 @@
+@media (prefers-reduced-motion: no-preference) {
+  .approche .bourdieu-quote.quote-arrived .word-reveal {
+    animation: bourdieu-arrival 850ms cubic-bezier(.22,.61,.36,1) both;
+  }
+  @keyframes bourdieu-arrival {
+    from { opacity: .35; transform: translateY(10px); }
+    to { opacity: 1; transform: none; }
+  }
+}

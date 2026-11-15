@@ -1,0 +1,2 @@
+body.edition37 img[data-atelier-photo]{object-position:var(--photo-d)}
+@media(max-width:700px){body.edition37 img[data-atelier-photo]{object-position:var(--photo-m)}}

@@ -1,0 +1,27 @@
+/* Les formes fixes du filet et du diagramme ne sont jamais retirées. */
+#ouverture .edition{position:relative}
+#ouverture .motion-rule{position:absolute;inset:auto 0 0;height:2px;background:var(--gold);transform-origin:left;opacity:0;pointer-events:none}
+@keyframes socialysia-title{from{transform:translateY(var(--reveal-y))}to{transform:none}}
+@keyframes socialysia-photo{from{clip-path:inset(0 3% 0 0)}to{clip-path:inset(0)}}
+@keyframes socialysia-rule{from{transform:scaleX(.65);opacity:.7}to{transform:scaleX(1);opacity:0}}
+@media(prefers-reduced-motion:no-preference){
+ #ouverture{--reveal-y:8px;--reveal-ease:cubic-bezier(.22,.61,.36,1)}
+ #ouverture h1>*{animation:socialysia-title 500ms var(--reveal-ease) both}
+ #ouverture h1>*:nth-child(2){animation-delay:55ms}
+ #ouverture h1>*:nth-child(3){animation-delay:110ms}
+ #ouverture .cover-photo img{animation:socialysia-photo 760ms var(--reveal-ease) 80ms both}
+ #ouverture .motion-rule{animation:socialysia-rule 620ms var(--reveal-ease) 110ms both}
+}
+@media(max-width:680px){#ouverture{--reveal-y:4px}}
+.edition37 .diagram-controls{min-height:44px;gap:8px;flex-wrap:wrap;align-items:center}
+.motion-sr{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap}
+#diagramme .motion-path{fill:none;stroke:#F7F5F0;stroke-width:2;stroke-dasharray:100;stroke-dashoffset:100;opacity:0;pointer-events:none}
+.motion-rail{display:none}
+@media(max-width:680px){
+ #diagramme .field-angles{position:relative}
+ .motion-rail{display:block;position:absolute;right:10px;top:0;bottom:-15px;width:2px;background:#F7F5F0;transform-origin:top;opacity:0;pointer-events:none}
+}
+@media(max-width:390px){
+ .edition37 #diagramme .diagram-controls{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));max-width:285px;margin-inline-start:auto}
+ #diagramme .trace-button{font-size:11px;line-height:1.2}
+}

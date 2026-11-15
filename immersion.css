@@ -1,0 +1,77 @@
+/* Phase 4 — mouvements progressifs, déclenchés sans masquer les contenus. */
+[hidden]{display:none!important}
+.edition37 .v1 .cover-photo img,.edition37.v1 .cover-photo img{box-shadow:6px 7px 0 color-mix(in srgb,var(--gold) 20%,var(--paper))}
+.edition37 .cover h1 em{color:color-mix(in srgb,var(--ink) 63%,var(--gold))}
+.edition37 .method :is(.eyebrow,figcaption,.reading-index,.reading-key){color:var(--paper)}
+.edition37 .method .reading-index{border-top-color:var(--gold);margin-bottom:9px}
+.edition37 .reading-key{font-size:13px;margin:0 0 14px}
+.edition37.publics .public-block.opening-band{background:var(--ink)}
+.edition37 .founder-hero figure::before{background:var(--ink)}
+.edition37 .field-reading .field-step{color:var(--blue)}
+.edition37 .field-reading li{position:relative}
+.edition37 .trace-button{padding:0 5px}
+.edition37 :is(.cover,.chapter,.field){isolation:isolate}
+.edition37 .photo-window{overflow:hidden}
+.edition37 .cover-photo img,.edition37 .method figure img{transform-origin:62% 51%}
+.edition37 .method figure img{filter:saturate(.83)}
+.edition37 .cover-links .line:hover,.edition37 .text-link:hover{border-bottom-color:currentColor}
+.edition37 .chapter .marker::after{transform-origin:left}
+@keyframes v37-title{from{transform:translateY(9px)}to{transform:translateY(0)}}
+@keyframes v37-photo{from{clip-path:inset(0 1.5% 0 0);filter:saturate(.76) brightness(.94)}to{clip-path:inset(0);filter:saturate(.88) brightness(1)}}
+@keyframes v37-rule{from{transform:scaleX(.84)}to{transform:scaleX(1)}}
+@media(prefers-reduced-motion:no-preference){
+ .edition37 .chapter-seen :is(h2,.marker span){animation:v37-title .46s ease-out both}
+ .edition37 .chapter-seen .marker::after{animation:v37-rule .64s ease-out both}
+ .edition37 .chapter-seen.portrait img{animation:v37-photo .72s ease-out both}
+}
+@media(prefers-reduced-motion:reduce){
+ .edition37 *,.edition37 *::before,.edition37 *::after{animation:none!important;transition:none!important}
+}
+.review .review-index{padding:16px var(--edge);display:flex;flex-wrap:wrap;gap:6px 24px;font-size:13px;font-weight:700}
+.review .review-index a{min-height:44px;display:inline-flex;align-items:center}
+.home-compare{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px;margin-top:25px}
+.home-compare iframe{display:block;width:100%;height:640px;border:1px solid var(--hair);background:var(--paper)}
+.compare-sample{margin-top:28px}
+.sample-tag{font-size:12px;letter-spacing:.06em;font-weight:700;margin-bottom:12px}
+.review .compare-sample .method{padding:clamp(23px,4vw,62px);border:0}
+.review .compare-sample .method figure img{height:clamp(225px,30vw,420px)}
+.review .historical{--tone:var(--ink)}
+.review .compare-sample .field{padding:clamp(24px,5vw,65px)}
+.review .demo-stage{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:25px;align-items:center;margin-top:22px}
+.review .demo-stage img{width:100%;aspect-ratio:4/3;object-fit:cover;object-position:63% 46%}
+@media(max-width:680px){
+ .home-compare,.review .demo-stage{grid-template-columns:1fr}
+ .home-compare iframe{height:600px}
+ .edition37 .method .reading-index{letter-spacing:0;gap:5px 9px}
+ .edition37 .method .reading-index li+li::before{margin-inline-end:8px}
+}
+
+/* Final integration: Contact and legal pages share the visual rhythm and navigation. */
+.edition37.contact-page .intro h1,.edition37.legal-page .intro h1{max-width:14ch}
+.edition37.contact-page .contact-grid>div{padding-top:clamp(0px,2vw,25px)}
+.edition37.legal-page .legal-copy{border-top:1px solid var(--hair);align-items:start}
+.edition37.legal-page .legal-copy h3{scroll-margin-top:15px}
+.edition37.legal-page .interior .intro{align-items:end}
+.edition37 .mast a[aria-current="page"]{text-decoration:underline;text-underline-offset:7px;text-decoration-color:#805a29}
+@media(max-width:680px){
+ .edition37.contact-page .contact-grid{padding-inline:var(--edge)}
+ .edition37.legal-page .legal-copy{gap:8px}
+}
+
+/* Contact direct : la composition reprend la grille et les tons de la V37. */
+.edition37.contact-page .contact-grid > .contact-direct {
+  min-width:0; padding:clamp(22px,4vw,54px);
+  border-top:1px solid var(--gold);
+  background:color-mix(in srgb,var(--gold) 8%,var(--paper));
+}
+.contact-direct .contact-email {
+  font:clamp(23px,3.25vw,52px)/1.12 var(--display);
+  margin:14px 0 22px; overflow-wrap:anywhere; user-select:text;
+}
+.contact-write {
+  display:inline-flex; align-items:center; gap:.75em; min-height:44px;
+  padding:8px 0; color:var(--ink); font-weight:700;
+  text-decoration:none; border-bottom:1px solid var(--gold);
+}
+.contact-write:hover { text-decoration:underline; text-underline-offset:.2em }
+.contact-help { color:var(--muted); margin:13px 0 0; max-width:42ch; font-size:.9rem }

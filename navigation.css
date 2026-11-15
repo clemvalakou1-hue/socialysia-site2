@@ -1,0 +1,29 @@
+.ux .mast nav a[aria-current="page"],.ux .mast>.direct[aria-current="page"]{text-decoration:underline;text-decoration-thickness:2px;text-underline-offset:.46em}
+.ux .mast nav a[aria-current="page"]::after,.ux .mast>.direct[aria-current="page"]::after{display:none}
+.ux .mast nav a:active,.ux .mast>.direct:active{background:color-mix(in srgb,currentColor 7%,transparent)}
+.ux .mast :focus-visible,.ux-chapters :focus-visible,.ux-passage :focus-visible,.ux-return :focus-visible{outline:2px solid currentColor;outline-offset:3px}
+.ux main [id]:target{scroll-margin-top:1.15rem}
+.ux .mobile-nav summary{padding-inline:10px}
+.ux .mobile-nav nav{max-height:calc(100dvh - 76px);overflow:auto;overscroll-behavior:contain}
+.ux .mobile-nav nav a{padding-inline:8px;min-height:46px}
+.ux .mobile-nav nav a:last-child{border-top:1px solid var(--hair)}
+.ux-menu-caption{font-size:10px;text-transform:uppercase;letter-spacing:.14em;margin:.65rem 8px}
+.ux-chapters{background:var(--paper);border-block:1px solid var(--hair);color:var(--ink)}
+.ux-chapter-inner{max-width:1200px;margin:auto;padding:10px var(--edge);display:grid;gap:4px 24px;grid-template-columns:115px 1fr;align-items:start}
+.ux-chapter-inner p,.ux-passage>span{margin:0;padding-block:13px;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.12em}
+.ux-count{display:block;color:#765a35}
+.ux-chapter-inner ol{list-style:none;display:flex;flex-wrap:wrap;gap:0 17px;padding:0;margin:0}
+.ux-chapter-inner a{min-height:44px;display:flex;align-items:center;gap:7px;font-size:12px;text-decoration:none;font-weight:700;line-height:1.28}
+.ux-chapter-inner a span{color:#765a35;font-size:10px}
+.ux-chapter-inner a:is(:hover,[aria-current]){text-decoration:underline;text-underline-offset:5px;text-decoration-thickness:2px}
+.ux-return{margin-block:1.5rem;font-size:13px}
+.ux-passage{grid-column:1/-1;display:grid;gap:4px;border-top:1px solid currentColor;padding-block:8px;margin-block:18px 10px;color:inherit}
+.ux-passage>span{padding:0}
+.ux-passage a{color:inherit;display:inline-flex;align-items:center;gap:8px;min-height:44px;width:fit-content;font-weight:700;font-size:13px;text-underline-offset:.3em}
+.ux-passage a:hover{text-decoration-thickness:2px}
+@media(max-width:680px){.ux-chapter-inner{grid-template-columns:1fr;gap:0}.ux-chapter-inner p{padding:5px 0}.ux-count{display:inline;margin-left:10px}.ux-chapter-inner ol{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 12px}}
+
+.ux .ux-passage a{max-width:100%;overflow-wrap:anywhere}
+.ux .ux-chapters [aria-current="location"]{text-decoration-thickness:2px}
+.ux .ux-count:empty{display:none}
+@media(prefers-reduced-motion:reduce){.ux *,.ux *::before,.ux *::after{transition:none!important}}

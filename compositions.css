@@ -1,0 +1,135 @@
+/* Compositions validées : approche, publics, expertises et rythme d’accueil. */
+.revue .review-intro{padding-block:clamp(38px,6.5vw,105px)}
+.revue .review-photo{margin:0;min-width:0}
+.revue .review-photo img{width:100%;height:100%;object-fit:cover}
+.revue .review-photo figcaption{letter-spacing:.035em;font-size:10px}
+.revue .review-intro .lead{max-width:47ch}
+.revue :is(.review-intro,.review-field,.opening-band) :focus-visible{outline-offset:4px}
+
+/* Approche : une séquence continue du seuil architectural au diagramme. */
+.revue.approche .review-intro{background:var(--blue);color:var(--paper);grid-template-columns:minmax(0,1.2fr) minmax(0,.8fr);align-items:center;gap:clamp(20px,7vw,110px)}
+.revue.approche .review-intro .intro-copy{display:block}
+.revue.approche .review-intro h1{font-size:clamp(45px,6.4vw,102px);margin:.22em 0}
+.revue.approche .review-intro .review-photo img{height:clamp(280px,36vw,530px);object-position:center 43%}
+.revue.approche .review-intro :is(.eyebrow,figcaption),.revue .review-field figcaption{color:inherit}
+.revue.approche .review-intro :focus-visible,.revue .review-field :focus-visible{outline-color:var(--paper)}
+.revue .review-field{background:var(--blue);color:var(--paper);border:0;--field-line:var(--gold);padding-block:22px clamp(44px,7vw,100px)}
+.revue .review-field>.marker{border-top:1px solid var(--gold);padding-top:17px}
+.revue .review-field>.marker::after{display:none}
+.revue .review-field .field-angles{border-color:var(--gold)}
+.revue .review-field .field-angles article{border-color:color-mix(in srgb,var(--gold) 65%,var(--blue))}
+.revue .review-field :is(.field-angles article small,.field-reading .field-step){color:var(--paper)}
+.revue .review-field .diagram-bridge{background:var(--paper);color:var(--blue);font-weight:700}
+.revue .review-field .trace-button{border-color:var(--gold)}
+.revue .review-field .trace-guide{stroke:var(--paper)}
+.revue .review-field .field-reading li::after{background:var(--paper)}
+.revue .review-field .field-reading .discussion::after{background:repeating-linear-gradient(90deg,var(--paper) 0 6px,transparent 6px 11px)}
+.revue .review-quote{background:color-mix(in srgb,var(--gold) 10%,var(--paper))}
+.revue .review-quote blockquote{margin-inline:auto;max-width:28ch}
+.revue .review-quote figcaption{margin-inline:auto;max-width:50ch}
+
+/* Publics : un atlas textuel, un premier terrain panoramique, puis un diptyque. */
+.revue.publics .review-intro{grid-template-columns:1fr;justify-items:start}
+.revue.publics .review-intro h1{max-width:none}
+.revue.publics .public-index{width:100%;grid-template-columns:1fr;margin-top:20px}
+.revue.publics .public-index a{min-height:46px;align-items:center;font-size:clamp(13px,1.4vw,18px)}
+.revue.publics .public-index a+a{border-top:1px solid var(--hair)}
+.revue.publics .public-index a::after{content:"↓";margin-left:auto}
+.revue.publics #ecoles,.revue.publics #professeurs{grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr);gap:22px 6vw}
+.revue.publics .public-block .terrain-head{grid-area:head}
+.revue.publics .public-block .review-photo{grid-area:photo}
+.revue.publics .public-block .cards{grid-area:axes}
+.revue.publics .public-block .public-question{grid-area:question}
+.revue.publics .public-block .text-link{grid-area:link}
+.revue.publics #ecoles{grid-template-areas:"head head" "photo photo" "question axes" "link axes"}
+.revue.publics #ecoles .review-photo img{height:clamp(160px,27vw,380px);object-position:center 41%}
+.revue.publics #professeurs{grid-template-areas:"photo head" "photo question" "axes axes" "link link"}
+.revue.publics #professeurs .review-photo img{height:clamp(220px,29vw,420px);object-position:58% center}
+.revue.publics #professeurs .cards{grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.revue.publics #structures{grid-template-columns:minmax(0,1fr) minmax(0,1fr);padding-inline:clamp(22px,10vw,170px)}
+.revue.publics #structures .text-link{grid-area:auto;grid-column:1/-1}
+
+/* Expertises : le titre, le propos et les pièces livrées n’ont pas le même poids. */
+.revue.expertises .review-intro{grid-template-columns:1fr;justify-items:center;text-align:center}
+.revue.expertises .review-intro .public-index,.revue.expertises .review-intro .subindex{width:100%;max-width:900px;justify-content:center}
+.revue .review-ledger{padding-top:clamp(29px,4vw,68px)}
+.revue .review-entry{grid-template-columns:54px minmax(0,1fr) minmax(0,.8fr);padding-block:clamp(26px,4vw,56px)}
+.revue .review-entry .expert-stages>div:last-child{border:0;background:color-mix(in srgb,var(--gold) 13%,var(--paper));padding:15px 17px}
+.revue.expertises #livrables .delivery-grid{grid-template-columns:1fr;max-width:960px;margin-inline:auto}
+.revue.expertises #livrables .delivery-grid>article{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:15px 4vw}
+@media(max-width:700px){
+ .revue.approche .review-intro{grid-template-columns:1fr;gap:18px}
+ .revue.approche .review-intro .review-photo img{height:clamp(150px,48vw,310px)}
+ .revue .review-field .field-angles article::after,.revue .review-field .field-angles::after{border-color:var(--gold)}
+ .revue.publics :is(#ecoles,#professeurs){grid-template-columns:minmax(0,1fr);grid-template-areas:"head" "photo" "question" "axes" "link"}
+ .revue.publics #professeurs .cards,.revue.publics #structures,.revue .review-entry,.revue.expertises #livrables .delivery-grid>article{grid-template-columns:1fr}
+ .revue.expertises .review-intro .public-index{grid-template-columns:1fr;text-align:left}
+}
+@media(max-width:700px){
+ .revue.publics :is(#ecoles,#professeurs)>*{grid-area:auto!important}
+ .revue.publics #professeurs .cards article{grid-template-columns:25px minmax(0,1fr)}
+}
+
+/* Sur l’accueil, une césure claire sépare l’enquête des interventions. */
+.parcours-integre #methode{padding-top:clamp(34px,5vw,72px);padding-bottom:clamp(27px,3.2vw,52px)}
+.parcours-integre #methode .marker{margin-bottom:clamp(14px,2vw,28px)}
+.parcours-integre #methode figure img{height:clamp(240px,31vw,438px)}
+.parcours-integre #methode .reading-index{margin-top:15px}
+.parcours-integre #methode .reading-key{margin-bottom:4px}
+.parcours-integre #interventions{border-top:clamp(10px,1.3vw,20px) solid var(--paper);padding-top:clamp(28px,3.4vw,52px);padding-bottom:clamp(38px,5vw,80px)}
+.parcours-integre #interventions .marker{margin-bottom:clamp(12px,1.8vw,25px)}
+.parcours-integre #interventions h2{margin-bottom:clamp(18px,2.6vw,35px)}
+.parcours-integre .explore{background:var(--paper);padding-block:clamp(25px,4vw,60px)}
+.parcours-integre .explore .section-head{margin-bottom:10px}
+.parcours-integre .explore .section-head h2{font-size:clamp(22px,2.65vw,40px);margin-bottom:12px}
+.parcours-integre .explore-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:0 18px;border-block:1px solid var(--hair)}
+.parcours-integre .explore-grid a{border:0;padding:13px 0;min-height:44px;gap:8px;align-items:start}
+.parcours-integre .explore-grid h3{font-size:clamp(18px,1.65vw,25px);margin:.35em 0 .3em}
+.parcours-integre .explore-grid p{font-size:12px;line-height:1.5;margin:0}
+.parcours-integre .explore-grid .explore-label{font-size:10px}
+.parcours-integre .explore-grid .explore-arrow{font-size:14px}
+.parcours-integre .chapter.cta .eyebrow{margin-bottom:14px}
+@media(max-width:700px){
+ .parcours-integre #methode figure img{height:clamp(170px,49vw,280px)}
+ .parcours-integre .explore-grid{grid-template-columns:1fr;gap:0}
+ .parcours-integre .explore-grid a+a{border-top:1px solid var(--hair)}
+}
+
+/* Modalités : distinguer le périmètre du tarif sans habiller les trois niveaux. */
+#modalites .modalites-detail {
+  display: grid;
+  grid-template-columns: minmax(0, 1.45fr) minmax(0, 1fr);
+  gap: clamp(28px, 5vw, 84px);
+  align-items: start;
+  margin-top: clamp(36px, 5vw, 76px);
+  padding-top: clamp(26px, 4vw, 55px);
+  border-top: 1px solid var(--hair);
+}
+#modalites .modalites-perimetre h3 {
+  font: 400 clamp(29px, 3.2vw, 47px)/1.05 var(--display);
+  margin: 0 0 20px;
+  max-width: 25ch;
+}
+#modalites .modalites-perimetre p,
+#modalites .modalites-devis { max-width: 53ch; margin: 0; }
+#modalites .modalites-perimetre p + p { margin-top: 12px; }
+#modalites .modalites-tarif {
+  min-width: 0;
+  border-left: 1px solid var(--gold);
+  padding-left: clamp(16px, 3vw, 46px);
+}
+#modalites .modalites-tarif h3 {
+  font: 700 11px/1.45 Noto, sans-serif;
+  text-transform: uppercase;
+  margin: 0 0 12px;
+}
+#modalites .modalites-montant {
+  font: 400 clamp(42px, 5.1vw, 72px)/1 var(--display);
+  letter-spacing: -.035em;
+  margin: 0;
+}
+#modalites .modalites-unite { margin: 5px 0 0; }
+#modalites .modalites-devis { margin-top: 18px; }
+@media (max-width: 900px) {
+  #modalites .modalites-detail { grid-template-columns: minmax(0, 1fr); }
+}
